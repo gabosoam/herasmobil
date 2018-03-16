@@ -1,0 +1,40 @@
+<!--
+  Generated template for the BusquedaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Código de barras</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <button ion-button icon-left block color="red" (click)="escanear()">
+
+    <ion-icon name="md-barcode"></ion-icon>
+    Escanear código
+  </button>
+
+  <ion-list>
+
+
+
+    <ion-item>
+      <ion-label stacked>Código de barras</ion-label>
+      <ion-input [(ngModel)]="codigo" placeholder="Ingrese o escanee el código de barras" type="text"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <button ion-button icon-left (click)="buscarProducto()" >
+
+    <ion-icon name="md-search"></ion-icon>
+    Buscar
+  </button>
+
+</ion-content>

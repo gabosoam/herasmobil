@@ -1,0 +1,77 @@
+<!--
+  Generated template for the EditarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Editar producto</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="producto" (ngSubmit)="editarProducto()">
+    <ion-item>
+      <ion-label disabled stacked>Código:</ion-label>
+      <ion-input type="text"  formControlName="codigo" placeholder="Ingrese el código del producto"></ion-input>
+      <br>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Nombre:</ion-label>
+      <ion-input type="text"  formControlName="nombre" placeholder="Ingrese el nombre del producto" ></ion-input>
+      <br>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Marca</ion-label>
+      <ion-select formControlName="marca">
+        <ion-option *ngFor="let marca of marcas" value="{{marca.id}}">{{marca.nombre}}</ion-option>
+
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Categoría</ion-label>
+      <ion-select  formControlName="categoria">
+        <ion-option *ngFor="let categoria of categorias" value="{{categoria.id}}">{{categoria.nombre}}</ion-option>
+
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Unidad</ion-label>
+      <ion-select  formControlName="unidad">
+        <ion-option *ngFor="let unidad of unidades" value="{{unidad.id}}">{{unidad.nombre}}</ion-option>
+
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Precio:</ion-label>
+      <ion-input type="number"  formControlName="precio" placeholder="Ingrese el precio del producto" name="precio"></ion-input>
+      <br>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Stock:</ion-label>
+      <ion-input type="number"  formControlName="stock" placeholder="Ingrese el stock del producto" name="stock"></ion-input>
+      <br>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Stock mínimo:</ion-label>
+      <ion-input type="number" formControlName="minimo" placeholder="Ingrese el stock mínimo del producto" name="minimo"></ion-input>
+      <br>
+    </ion-item>
+
+    <button ion-button type="submit" block>Guardar</button>
+   
+  </form>
+  <button ion-button type="button" block (click)="cerrar()">Cancelar</button>
+</ion-content>
